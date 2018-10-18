@@ -1,30 +1,40 @@
 package com.usjt.sce.model;
 
+public class Livro {
+	private String isbn;
+	private String titulo;
+	private String autor;
 
-	public class Livro {
-		private String isbn;
-		private String titulo;
-		private String autor;
-		public String getIsbn() {
+	public String getIsbn() {
 		return isbn;
-		}
-		public void setIsbn(String isbn) {
-		if (isbn == "" | isbn == null){
-		throw new RuntimeException("ISBN invalido");
+	}
+
+	public void setIsbn(String isbn) {
+		if (isbn == "" | isbn == null) {
+			throw new RuntimeException("ISBN invalido");
 		}
 		this.isbn = isbn;
-		}
-		public String getTitulo() {
-		return titulo;
-		}
-		public void setTitulo(String titulo) {
-		this.titulo = titulo;
-		}
-		public String getAutor() {
-		return autor;
-		}
-		public void setAutor(String autor) {
-		this.autor = autor;
-		}
-		}
+	}
 
+	public String getTitulo() {
+		return titulo;
+	}
+
+	public void setTitulo(String titulo) {
+		if (titulo == "" | titulo == null) {
+			throw new RuntimeException("Titulo Invalido");
+		}
+		this.titulo = titulo;
+	}
+
+	public String getAutor() {
+		return autor;
+	}
+
+	public void setAutor(String autor) {
+		if (autor == "" | autor == null) {
+			throw new RuntimeException("Autor Invalido");
+		}
+		this.autor = autor;
+	}
+}
